@@ -1,0 +1,6 @@
+robotpos1:
+  hardware_interface:
+     loop_hz: 10
+     joints:
+       - joint_1
+

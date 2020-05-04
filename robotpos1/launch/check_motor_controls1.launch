@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+    
+  <rosparam file="$(find robotpos1)/config/controllers.yaml" command="load"/>
+   
+  <arg name="model" default="$(find robotpos1)/urdf/robot.urdf.xacro"/>
+  <arg name="gui" default="true" />
+  
+  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <node name="robot_hardware_interface" pkg="robotpos1" type="robotpos1_node" output="screen"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" >
+  </node>
+  
+  <node name="rviz" pkg="rviz" type="rviz"/>
+    
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="
+      	    /robotpos1/controller/state
+            /robotpos1/controller/position/joint_1
+        "/>
+</launch>
