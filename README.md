@@ -19,6 +19,7 @@ Learning the ROS control &amp; ROS controllers is currently an work in progress.
 
 # repositories
 - https://github.com/DeborggraeveR/ampru
+- https://github.com/eborghi10/my_ROS_mobile_robot
 
 # ros controllers
 - http://wiki.ros.org/ros_controllers
