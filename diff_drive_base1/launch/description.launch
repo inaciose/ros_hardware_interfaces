@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro '$(find diff_drive_base1)/urdf/robot.urdf.xacro'
+        --inorder"/>
+</launch>
