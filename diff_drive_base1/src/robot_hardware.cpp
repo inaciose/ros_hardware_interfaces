@@ -6,6 +6,19 @@ robot_base::robotHardwareInterface::robotHardwareInterface(ros::NodeHandle &nh, 
     : _nh(nh)
     , _private_nh(private_nh)
 {
+    // zero controller variables
+    _cmd[0] = 0;
+    _cmd[1] = 0;
+    _pos[0] = 0;
+    _pos[1] = 0;
+    _vel[0] = 0;
+    _vel[1] = 0;
+    _eff[0] = 0;
+    _eff[1] = 0;
+    // zero encoder variables
+    ticks[0] = 0;
+    ticks[1] = 0;
+
     _private_nh.param<double>("wheel_diameter", _wheel_diameter, 0.31);
     _private_nh.param<int>("wheel_encoder_pulses", _wheel_encoder_pulses, 740);
     _private_nh.param<double>("max_speed", _max_speed, 1.0);
